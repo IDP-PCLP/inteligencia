@@ -61,8 +61,8 @@ app_ui = ui.page_fixed(
         Vamos analisar os dados dos lançamentos espaciais desde o primeiro lançamento em 1957 até 2020.
     """),
         ui.panel_main(
-            ui.output_table("text_data"),
-            ui.output_plot("plot")
+            ui.output_plot("plot"),
+            ui.output_table("text_data")
         )
     )
 def server(input, output, session):
