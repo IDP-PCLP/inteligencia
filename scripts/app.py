@@ -15,7 +15,7 @@ dados.head()
 # A coluna Datum possui informações sobre a data de lançamento
 # Para transformar a data de texto para datetime e poder obter o ano, vamos utilizar a função to_datetime
 # Assim vamos obter o ano de cada lançamento e salvar em uma nova coluna
-dados['Ano'] = [i.year for i in pd.to_datetime(dados['Datum'])]
+dados['Ano'] = [i.year for i in pd.to_datetime(dados['Datum'],format='mixed')]
 # Obtenha quantos lançamentos foram realizados por ano e qual ano teve mais lançamentos
 por_ano = dados.groupby('Ano').count().sort_values('Ano',ascending=False)
 por_ano[['Datum']][0:10].plot.bar()
